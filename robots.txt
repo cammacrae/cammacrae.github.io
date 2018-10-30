@@ -1,0 +1,4 @@
+Sitemap: https://cammacrae.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: cammacrae.github.io

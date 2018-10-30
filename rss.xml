@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cam MacRae</title><link>https://cammacrae.github.io/</link><description>Incoherent ramblings...</description><atom:link href="https://cammacrae.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:cam.macrae+githubio@gmail.com"&gt;Cam MacRae&lt;/a&gt; 
+&lt;br /&gt;This work
+by &lt;span xmlns:cc="http://creativecommons.org/ns#"
+property="cc:attributionName"&gt;Cameron MacRae&lt;/span&gt; is licensed under a &lt;a
+rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;Creative
+Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;. &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;&lt;img
+alt="Creative Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 30 Oct 2018 16:39:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hamming distance</title><link>https://cammacrae.github.io/posts/cs/hamming-distance/</link><dc:creator>Cam MacRae</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Hamming-distance"&gt;Hamming distance&lt;a class="anchor-link" href="https://cammacrae.github.io/posts/cs/hamming-distance/#Hamming-distance"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Hamming distance is named after the late American mathematician &lt;a href="https://en.wikipedia.org/wiki/Richard_Hamming" title="Richard Hamming's Wikipedia Entry"&gt;Richard Hamming&lt;/a&gt;. Given two sequences of equal length, the Hamming distance measures the minimum number of symbols that must be substituted to transform one string into the other. As such, the Hamming distance is a measure of similarity, or more formally, a measure of the &lt;a href="https://en.wikipedia.org/wiki/Edit_distance" title="Edit distance Wikipedia entry"&gt;edit distance&lt;/a&gt; between two sequences.&lt;/p&gt;
+&lt;p&gt;Given two zero indexed sequences $a$ and $b$ of length $3$:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;We can see intuitively see that to transform $b$ into $a$ we must substitute $b_{2}$ with the symbol $1$. Likewise, to transform $a$ into $b$ we must substitute $a_{2}$ with the symbol $0$. It follows, that the Hamming distance $hamming(a, b)$ is $1$, as this is the minimum number of substitutions to transform $a$ into $b$ or $b$ into $a$.&lt;/p&gt;
+&lt;p&gt;It is trivial to implement a Hamming distance function in code:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hamming&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s2"&gt;"Undefined for iterables of different length."&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;zip&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;hamming&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[3]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;1&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Of course attempting to calculate the Hamming distance of $a$ and a new sequence $c$ having length $2$ results in an exception:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;hamming&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_text output_error"&gt;
+&lt;pre&gt;
+&lt;span class="ansi-red-fg"&gt;---------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="ansi-red-fg"&gt;AssertionError&lt;/span&gt;                            Traceback (most recent call last)
+&lt;span class="ansi-green-fg"&gt;&amp;lt;ipython-input-5-40a6cb906c2e&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;&amp;lt;module&amp;gt;&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;()&lt;/span&gt;
+&lt;span class="ansi-green-fg"&gt;----&amp;gt; 1&lt;/span&gt;&lt;span class="ansi-red-fg"&gt; &lt;/span&gt;hamming&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;a&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; c&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;
+
+&lt;span class="ansi-green-fg"&gt;&amp;lt;ipython-input-2-7d6191dd3731&amp;gt;&lt;/span&gt; in &lt;span class="ansi-cyan-fg"&gt;hamming&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;(a, b)&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;      1&lt;/span&gt; &lt;span class="ansi-green-fg"&gt;def&lt;/span&gt; hamming&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;a&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; b&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;:&lt;/span&gt;
+&lt;span class="ansi-green-fg"&gt;----&amp;gt; 2&lt;/span&gt;&lt;span class="ansi-red-fg"&gt;     &lt;/span&gt;&lt;span class="ansi-green-fg"&gt;assert&lt;/span&gt; len&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;a&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt; &lt;span class="ansi-blue-fg"&gt;==&lt;/span&gt; len&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;b&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; &lt;span class="ansi-blue-fg"&gt;"Undefined for iterables of different length."&lt;/span&gt;
+&lt;span class="ansi-green-intense-fg ansi-bold"&gt;      3&lt;/span&gt;     &lt;span class="ansi-green-fg"&gt;return&lt;/span&gt; sum&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;[&lt;/span&gt;i&lt;span class="ansi-blue-fg"&gt;!=&lt;/span&gt;j &lt;span class="ansi-green-fg"&gt;for&lt;/span&gt; i&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt;j &lt;span class="ansi-green-fg"&gt;in&lt;/span&gt; zip&lt;span class="ansi-blue-fg"&gt;(&lt;/span&gt;a&lt;span class="ansi-blue-fg"&gt;,&lt;/span&gt; b&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;]&lt;/span&gt;&lt;span class="ansi-blue-fg"&gt;)&lt;/span&gt;
+
+&lt;span class="ansi-red-fg"&gt;AssertionError&lt;/span&gt;: Undefined for iterables of different length.&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Sequences need not be numeric:&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Hamming'&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Hammond'&lt;/span&gt;
+&lt;span class="n"&gt;hamming&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt output_prompt"&gt;Out[6]:&lt;/div&gt;
+
+
+
+
+&lt;div class="output_text output_subarea output_execute_result"&gt;
+&lt;pre&gt;2&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;The Hamming distance can also be useful for defining neighbourhood bounds for metaheurstic local search. Consider the following trivial 0-1 investment problem:&lt;/p&gt;
+&lt;p&gt;$
+\begin{align*}                                                                                 
+    min: &amp;amp;\quad z = \sum_{i=1}^{5} c_{i}y_{i} \\
+    st: &amp;amp;\quad\\
+        &amp;amp;\quad\sum_{i=1}^{5} y_{i} &amp;gt; 2 \\
+        &amp;amp; \quad y \in\{0,1\}
+\end{align*} 
+$&lt;/p&gt;
+&lt;p&gt;Where $c_{i}$ is the cost of making investment $y_{i}$.&lt;/p&gt;
+&lt;p&gt;A metaheuristic (albeit poor) approach to solving the problem might be to begin the solution vector $y = [1, 1, 1, 1, 1]$, and to randomly explore solutions within Hamming distance $h$ of the incumbent solution until some stopping condition is met. For example, let $h = 2$ and the stopping condition be 2 iterations. In this case we randomly explore the neighbourhood bounded by 2 substitutions of our incumbent solution. Our local search might proceed as follows:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Iteration 0: $y = [1, 1, 1, 1, 1], z = 15$&lt;/p&gt;
+&lt;p&gt;Iteration 1: $y = [0, 1, 1, 1, 1], z = 14$ (new incumbent)&lt;/p&gt;
+&lt;p&gt;Iteration 2: $y = [1, 1, 1, 0, 1], z = 11$ (new incumbent)&lt;/p&gt;
+&lt;p&gt;Iteration 3: $y = [1, 0, 1, 1, 1], z = 13$&lt;/p&gt;
+&lt;p&gt;Iteration 4: $y = [1, 1, 0, 0, 0], z = 3$ (infeasible)&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Solution: $y = [1, 1, 1, 0, 1], z = 11$&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;If you can guess the cost vector $c$ you'd know this a poor heuristic indeed!&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>computer science</category><category>mathematics</category><category>optimisation</category><guid>https://cammacrae.github.io/posts/cs/hamming-distance/</guid><pubDate>Wed, 09 May 2018 05:36:21 GMT</pubDate></item></channel></rss>
