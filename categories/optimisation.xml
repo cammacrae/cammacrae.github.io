@@ -6,7 +6,7 @@ property="cc:attributionName"&gt;Cameron MacRae&lt;/span&gt; is licensed under a
 rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;Creative
 Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;. &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;&lt;img
 alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 31 Oct 2018 07:44:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hamming distance</title><link>https://cammacrae.github.io/posts/cs/hamming-distance/</link><dc:creator>Cam MacRae</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 31 Oct 2018 07:48:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hamming distance</title><link>https://cammacrae.github.io/posts/cs/hamming-distance/</link><dc:creator>Cam MacRae</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Hamming-distance"&gt;Hamming distance&lt;a class="anchor-link" href="https://cammacrae.github.io/posts/cs/hamming-distance/#Hamming-distance"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Hamming distance is named after the late American mathematician &lt;a href="https://en.wikipedia.org/wiki/Richard_Hamming" title="Richard Hamming's Wikipedia Entry"&gt;Richard Hamming&lt;/a&gt;. Given two sequences of equal length, the Hamming distance measures the minimum number of symbols that must be substituted to transform one string into the other. As such, the Hamming distance is a measure of similarity, or more formally, a measure of the &lt;a href="https://en.wikipedia.org/wiki/Edit_distance" title="Edit distance Wikipedia entry"&gt;edit distance&lt;/a&gt; between two sequences.&lt;/p&gt;
@@ -287,6 +287,7 @@ Solution: y = [1, 0, 1, 0, 1], z = 9
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;That's all folks!&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
