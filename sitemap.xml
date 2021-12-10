@@ -7,50 +7,26 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://cammacrae.github.io/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/2018/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://cammacrae.github.io/archive.html</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://cammacrae.github.io/blog/</loc>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://cammacrae.github.io/categories/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </url>
  <url>
-  <loc>https://cammacrae.github.io/categories/cat_cs/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/categories/computer-science/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/categories/mathematics/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/categories/optimisation/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/galleries/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/listings/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
+  <loc>https://cammacrae.github.io/pages/</loc>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://cammacrae.github.io/pages/about/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://cammacrae.github.io/posts/cs/hamming-distance/</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
+  <lastmod>2021-12-10T13:46:00Z</lastmod>
  </url>
 </urlset>

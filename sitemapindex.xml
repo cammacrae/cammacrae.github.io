@@ -6,31 +6,11 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>https://cammacrae.github.io/categories/cat_cs.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://cammacrae.github.io/categories/computer-science.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://cammacrae.github.io/categories/mathematics.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://cammacrae.github.io/categories/optimisation.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://cammacrae.github.io/galleries/rss.xml</loc>
-  <lastmod>2018-10-30T16:39:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://cammacrae.github.io/rss.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://cammacrae.github.io/sitemap.xml</loc>
-  <lastmod>2018-10-31T07:44:00Z</lastmod>
+  <lastmod>2021-12-10T14:01:00Z</lastmod>
  </sitemap>
 </sitemapindex>
